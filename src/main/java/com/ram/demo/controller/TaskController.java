@@ -32,7 +32,6 @@ public class TaskController {
         return new ResponseEntity<>(taskService.getAllTasks(userid), HttpStatus.OK);
     }
 
-    @PreAuthorize(value = "ROLE_ADMIN")
     @GetMapping("/{user_id}/tasks/{task_id}")
     public ResponseEntity<TaskDto> getAllTasks(
             @PathVariable(name = "user_id") long userId,

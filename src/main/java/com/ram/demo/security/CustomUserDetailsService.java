@@ -36,7 +36,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     private Collection<? extends GrantedAuthority> userAuthorities(Set<String> roles) {
         return roles.stream().map(
-                SimpleGrantedAuthority::new
+                role -> new SimpleGrantedAuthority(role)
         ).collect(Collectors.toList());
     }
 }
